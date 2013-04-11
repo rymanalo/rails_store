@@ -1,3 +1,6 @@
+require 'open-uri'
+
+
 class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
@@ -15,7 +18,10 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @product_id = @product.id
-    # @review = Review.find(params[:id])
+    @product_name = @product.name
+
+    file = open("https://www.googleapis.com/shopping/search/v1/public/products?key=AIzaSyCJO615wXOmLuktUIFAXb14moV7qNvmT4E&country=US&q=#{URI.escape(@product_name)}&alt=json", :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE)
+    @result = JSON.load(file.read)['items'][0]['product']
 
     respond_to do |format|
       format.html # show.html.erb
