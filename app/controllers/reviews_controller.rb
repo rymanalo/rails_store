@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
   # GET /reviews/1.json
   def show
     @review = Review.find(params[:id])
-
+    @products = Product.all
 
 
     respond_to do |format|
