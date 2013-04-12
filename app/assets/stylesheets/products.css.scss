@@ -2,10 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  background: #d6efe7;
+}
+
 img {
   width: 500px;
 }
 
 .index {
-  width: 75px;
+  width: 100px;
+}
+
+.listings {
+  border: 2px solid #1c4fff;
+  display: inline-block;
+  text-align: center;
+  background: #89b7ff;
+}
+
+.cart {
+  float: right;
+  border: 2px solid red;
+  background: #ffb1bd;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #f1ff0f;
 }
