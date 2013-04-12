@@ -2,6 +2,14 @@ require 'open-uri'
 
 
 class ProductsController < ApplicationController
+  before_filter :products_in_cart
+
+  def products_in_cart
+    @products_in_cart = Product.where("in_cart = 't'")
+  end
+
+
+
   # GET /products
   # GET /products.json
   def index
