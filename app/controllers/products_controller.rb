@@ -5,7 +5,9 @@ class ProductsController < ApplicationController
   before_filter :products_in_cart
 
   def products_in_cart
-    @products_in_cart = Product.where("in_cart = 't'")
+    @products_in_cart = Product.where(:in_cart => true)
+    @prices_in_cart = @products_in_cart.map {|product| product.price}
+    @total_price = @prices_in_cart.reduce(:+)
   end
 
 
