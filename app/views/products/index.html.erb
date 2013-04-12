@@ -5,7 +5,6 @@
     <th>Name</th>
     <th>Price</th>
 
-    <th>In cart?</th>
 
     <th></th>
     <th></th>
@@ -16,8 +15,11 @@
   <tr>
     <td><%= product.name %></td>
     <td><%= number_to_currency(product.price) %></td>
+    
+    <% file = open("https://www.googleapis.com/shopping/search/v1/public/products?key=AIzaSyCJO615wXOmLuktUIFAXb14moV7qNvmT4E&country=US&q=#{URI.escape(product.name)}&alt=json", :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE) %>
 
-    <td><%= product.in_cart %></td>
+    <% @result = JSON.load(file.read)['items'][0]['product'] %>
+    <td><img class='index' src="<%= @result['images'][0]['link'] %>" /></td>
 
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
