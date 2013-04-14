@@ -14,17 +14,21 @@ img {
   width: 100px;
 }
 
-.listings {
+#listings {
   border: 2px solid #1c4fff;
   display: inline-block;
   text-align: center;
   background: #89b7ff;
 }
 
-.cart {
-  float: right;
+#cart {
+/*  float: right;*/
   border: 2px solid red;
   background: #ffb1bd;
+}
+
+.container {
+  
 }
 
 h1 {
@@ -38,5 +42,5 @@ h2 {
 
 a {
   text-decoration: none;
-  color: #f1ff0f;
+  color: #f38f5d;
 }
