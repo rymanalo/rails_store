@@ -12,6 +12,6 @@
   </tr>
   <% end %>
     <td><h3>Total:</h3></td>
-    <td><h3><%= number_to_currency(@total_price) %></h3> </td>
+    <td><h3><%= number_to_currency(@total_price) || number_to_currency(0)%></h3> </td>
 </table>
 </div>

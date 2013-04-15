@@ -1,4 +1,4 @@
-<div class="col8">
+
 
 <p id="notice"><%= notice %></p>
 
@@ -8,28 +8,25 @@
 
 
 <p>
-  <img id="show" src="<%= @result['images'][0]['link'] %>" />
+  <img id="show" class="col4" src="<%= @result['images'][0]['link'] %>" />
 </p>
 
-<p>
+<p class="col5">
   <%= @result['description'] %>
 </p>
 
+<div class="col12">
 <p>
-  <a href="<%= @result['link'] %>"><b>Buy Now!</b></a>
+  <a href="<%= @result['link'] %>"><h3>Buy Now!</h3></a>
 </p>
 
 <p>
   <b>Price:</b>
-  <%= number_to_currency(@product.price) %>
-
-
-  <%= render 'addcart' %>
-
-
-
+  <%= number_to_currency(@product.price) %> <%= render 'addcart' %>
 </p>
+</div>
 
+<div class="col12">
 <p>
   <b>Reviews:</b>
   <ol>
@@ -41,7 +38,7 @@
 </p>
 
 
-<a href="../reviews/new?product_id=<%= @product_id %>"> New Review </a>
+<a href="../reviews/new?product_id=<%= @product_id %>"><h3> New Review </h3></a>
 
 <br/>
 

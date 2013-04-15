@@ -1,21 +1,20 @@
 <%= link_to 'New Product', new_product_path %>
-<h2>Click To Fine More Details!!!</h2>
+<h2>You Know You Want To Buy Something!!!</h2>
 
 
 
 <div class="col10">
 <% @products.each do |product| %>
   <div id='listings' class="col3">
-    <p><%= product.name %></p>
+    <p><h3><%= product.name %></h3></p>
     <p><%= number_to_currency(product.price) %></p>
     
     <% file = open("https://www.googleapis.com/shopping/search/v1/public/products?key=AIzaSyCJO615wXOmLuktUIFAXb14moV7qNvmT4E&country=US&q=#{URI.escape(product.name)}&alt=json", :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE) %>
 
     <% @result = JSON.load(file.read)['items'][0]['product'] %>
-    <p><img class='index' src="<%= @result['images'][0]['link'] %>" /></p>
+    <p> <a href='products/<%= product.id %>'><img class='index' src="<%= @result['images'][0]['link'] %>" /></a></p>
 
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
+    <td><%= link_to 'Edit', edit_product_path(product) %></td> |
     <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </div>
 <% end %>
