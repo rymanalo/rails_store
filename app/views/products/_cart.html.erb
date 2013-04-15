@@ -1,4 +1,4 @@
-<div id="cart" class="col3">
+<div id="cart">
 
 <h2> Your Cart </h2>
 
@@ -7,6 +7,8 @@
   <tr>
     <td><%= product.name %></td>
     <td><%= number_to_currency(product.price) %></td>
+    <td><%= render 'removeFromCart', :product => product %></td>
+
   </tr>
   <% end %>
     <td><h3>Total:</h3></td>

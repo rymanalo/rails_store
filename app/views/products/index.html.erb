@@ -1,8 +1,9 @@
-<h2>Click To Fine More Details!!!</h2>
 <%= link_to 'New Product', new_product_path %>
+<h2>Click To Fine More Details!!!</h2>
 
 
-<div class="col8">
+
+<div class="col10">
 <% @products.each do |product| %>
   <div id='listings' class="col3">
     <p><%= product.name %></p>

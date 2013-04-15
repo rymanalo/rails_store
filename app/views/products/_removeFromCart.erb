@@ -1,0 +1,7 @@
+<%= form_for(product) do |f| %>
+
+<div class="rm_button">
+    <%= f.hidden_field :in_cart, :value => false %>
+        <%= f.submit "X" %>
+  </div>
+<% end %>

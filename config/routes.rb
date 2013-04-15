@@ -1,6 +1,6 @@
 RailsStore::Application.routes.draw do
-  resources :reviews, :only => [:new, :show, :edit, :create] 
-
+  # resources :reviews, :only => [:new, :show, :edit, :create, :index] 
+  resources :reviews
   # get '/reviews(.:format)', :controller => 'reviews', :action => 'index', :as => "reviews"
   # get '/reviews/new(.:format)', :controller => 'reviews', :action => 'new', :as => "new_review"
   # get '/reviews/:id/edit(.:format)', :controller => 'reviews', :action => 'edit', :as => "edit_review"

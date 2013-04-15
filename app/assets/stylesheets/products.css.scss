@@ -4,10 +4,12 @@
 
 body {
   background: #d6efe7;
+  font-family: 'Economica', sans-serif;  
 }
 
-img {
+#show {
   width: 500px;
+  height: auto;
 }
 
 .index {
@@ -25,19 +27,23 @@ img {
 /*  float: right;*/
   border: 2px solid red;
   background: #ffb1bd;
+  position: fixed;
+  top: 100px;
+  right: 100px;
 }
 
-.container {
-  
-}
 
 h1 {
-  font-size: 50px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 75px;
   text-align: center;
+  color: #fd6906;
 }
 
 h2 {
   font-size: 20px;
+  color: #f34f60;
+  font-family: 'Homemade Apple', cursive;
 }
 
 a {
